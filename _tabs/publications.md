@@ -3,40 +3,8 @@ title: Publications
 icon: fas fa-book
 order: 5
 ---
-# Publications v1
-
-{% assign publication_posts = site.posts | where_exp: "post", "post.categories contains 'Publications'" %}
-
-{% assign publication_years = publication_posts | map: "date" | map: "year" | uniq | sort | reverse %}
-
-{% for year in publication_years %}
-
-## {{ year }}
-
-{% for post in publication_posts %}
-  {% if post.date | date: "%Y" == year %}
-
-### [{{ post.title }}]({{ post.url | relative_url }})
-
-{% if post.authors %}
-**Authors:** {{ post.authors }}
-
-{% endif %}
-{% if post.journal %}
-**Journal:** *{{ post.journal }}*
-
-{% endif %}
-{% if post.description %}
-{{ post.description }}
-
-{% endif %}
-
-{% endif %}
-{% endfor %}
-
-{% endfor %}
-
-
+ 
+ 
 
 # Publications v2
 
